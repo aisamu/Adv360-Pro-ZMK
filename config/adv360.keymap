@@ -35,6 +35,17 @@
         bindings = <&kp>, <&kp>;
     };
 
+    gqt: global-quick-tap {
+        compatible = "zmk,behavior-hold-tap";
+        label = "GLOBAL_QUICK_TAP";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <125>;
+        global-quick-tap;
+        bindings = <&kp>, <&kp>;
+    };
+
     // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
     smart_shft: smart_shift {
         label = "SMART_SHIFT_CAPS_WORD";
@@ -53,7 +64,7 @@
             bindings = <
       &kp EQUAL              &kp N1        &kp N2    &kp N3     &kp N4  &kp N5                        &tog 1                                                                                    &mo 3  &kp N6    &kp N7     &kp N8    &kp N9                   &kp N0                       &kp MINUS
      &kp DELETE               &kp Q         &kp W     &kp E      &kp R   &kp T                         &none                                                                                    &none   &kp Y     &kp U      &kp I     &kp O                    &kp P                        &kp BSLH
-  &kp BACKSPACE               &kp A         &kp S     &kp D      &kp F   &kp G                       &kp HYP  &mt LEFT_COMMAND ESCAPE  &kp LALT                   &kp LGUI  &kp RCTRL         &kp MEH   &kp H     &kp J      &kp K     &kp L                 &kp SEMI  &mt RIGHT_COMMAND SINGLE_QUOTE
+  &kp BACKSPACE               &kp A         &kp S     &kp D      &kp F   &kp G                       &kp HYP  &mt LEFT_COMMAND ESCAPE  &kp LALT                   &kp LGUI  &kp RCTRL         &kp MEH   &kp H     &kp J      &kp K     &kp L                 &kp SEMI &gqt RIGHT_COMMAND SINGLE_QUOTE
     &smart_shft  &mt LEFT_CONTROL Z         &kp X     &kp C      &kp V   &kp B                                                         &kp HOME                  &kp PG_UP                              &kp N     &kp M  &kp COMMA   &kp DOT  &mt RIGHT_CONTROL SLASH                       &kp RSHFT
           &mo 2           &kp GRAVE  &kp LEFT_ALT  &kp LEFT  &kp RIGHT                             &kp SPACE            &kp BACKSPACE   &kp END                  &kp PG_DN    &kp TAB       &kp ENTER          &kp DOWN     &kp UP  &kp LBKT                 &kp RBKT                           &mo 2
             >;
